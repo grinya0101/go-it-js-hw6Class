@@ -4,6 +4,7 @@ import onHitsMarkup from './onHitsMarkup'
 
 
 
+
 const formEL = document.querySelector('.search-form');
 const btnEl = document.querySelector('.load-more');
 const divEl = document.querySelector('.gallery');
