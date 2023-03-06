@@ -1,19 +1,17 @@
-import createMarkup from './index'
-import SimpleLightbox from 'simplelightbox';
-
-export default function onHitsMarkup(hits) {
-    const result = hits
-      .map(
-        ({
-          webformatURL,
-          largeImageURL,
-          tags,
-          likes,
-          views,
-          comments,
-          downloads,
-        }) => {
-          return `
+function onHitsMarkup(articles) {
+  console.log(articles);
+  return articles
+    .map(
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => {
+        return `
   
       <div class="photo-card">
       <a href="${largeImageURL}">
@@ -39,12 +37,10 @@ export default function onHitsMarkup(hits) {
     </div>
   </div>
   
-  `;}).join('');
-  
-   createMarkup(result);
-    new SimpleLightbox('.gallery a', {
+  `;
+      }
+    )
+    .join('');
+}
 
-        
-    });
-  }
-
+export { onHitsMarkup };
